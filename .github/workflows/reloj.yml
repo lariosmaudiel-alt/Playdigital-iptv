@@ -2,12 +2,16 @@ name: Actualizador de Canales
 
 on:
   schedule:
-    - cron: '0 */6 * * *' # Se ejecuta automáticamente cada 6 horas
-  workflow_dispatch: # Te permite ejecutarlo manualmente con el botón gris
+    - cron: '0 */6 * * *' # Se ejecuta cada 6 horas
+  workflow_dispatch: # Permite ejecutarlo manualmente
 
 jobs:
   build:
     runs-on: ubuntu-latest
+    
+    # Damos permisos explícitos al robot para escribir cambios en el repositorio
+    permissions:
+      contents: write
 
     steps:
     - name: Clonar el repositorio
@@ -16,7 +20,7 @@ jobs:
     - name: Configurar Python
       uses: actions/setup-python@v4
       with:
-        python-state: '3.10'
+        python-version: '3.10' # Corregido de python-state a python-version
 
     - name: Instalar dependencias y Playwright
       run: |
@@ -32,4 +36,11 @@ jobs:
         git config --local user.email "actions@github.com"
         git config --local user.name "GitHub Actions"
         git add lista_automatica.m3u
-        git diff --quiet && git diff --staged --quiet || (git commit -m "Lista M3U actualizada automáticamente con Playwright" && git push)
+        
+        # Solo hace commit si el archivo realmente cambió, evitando el error 128
+        if ! git diff --cached --quiet; then
+          git commit -m "Lista M3U actualizada automáticamente con Playwright"
+          git push
+        else
+          print "No hay cambios detectados en la lista."
+        fi
