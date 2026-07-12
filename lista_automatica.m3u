@@ -5,7 +5,4 @@ https://live.streamhch.com/live/streams/hch1.m3u8
 https://hch.tv/live/hch/playlist.m3u8
 #EXTINF:-1, DSports
 #EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-https://bmf0aw9u.fubo18.com/dsports/mono.m3u8?token=3ecf616f0c4aa9c6bd33ad6dfe6a8562406357ba-e0-1783819012-1783801012
-#EXTINF:-1, DSports HD
-#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
-https://deportes.ksdjugfsddeports.com:9092/NjguMjIwLjU4LjE1MQ==/3_.m3u8?token=wwMI6sLrHRha3fuq_I_WxA&expires=1783845138
+https://c2f2zq.fubo18.com/dsports/mono.m3u8?token=e5f5765567813d54b210788bc9cfdc96dbce2071-cc-1783859761-1783841761
