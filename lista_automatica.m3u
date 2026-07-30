@@ -3,3 +3,6 @@
 https://live.streamhch.com/live/streams/hch1.m3u8
 #EXTINF:-1, HCH Alternativo
 https://hch.tv/live/hch/playlist.m3u8
+#EXTINF:-1, DSports HD
+#EXTVLCOPT:http-user-agent=Mozilla/5.0 (Windows NT 10.0; Win64; x64)
+https://deportes.ksdjugfsddeports.com:9092/NjguMjIwLjU5LjI0NQ==/3_.m3u8?token=ni8ROjzQSpYHGEdbdsjxrQ&expires=1785443551
